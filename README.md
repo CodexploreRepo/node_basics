@@ -9,11 +9,11 @@
 # Basics
 ### Modules in Node
 
-- app.js 
+**- app.js**
 ```JavaScript
 import largeNumber, {smallNumber} from 'module.js'
 ```
-- module.js 
+**- module.js**
 ```JavaScript
 const largeNumber = 356;
 const smallNumber = 1;
