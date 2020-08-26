@@ -5,6 +5,7 @@
 - [Table of contents](#table-of-contents)
 - [Bascis](#basics)
   - [Modules in Node](#modules-in-node)
+  - [Building a Server](#building-a-server)
 
     
 
@@ -50,3 +51,31 @@
       }
     ```
   [(Back to top)](#table-of-contents)
+
+### Building a Server
+  - [Survey about Most Popular Back-End Framework](https://2019.stateofjs.com/back-end/)
+  
+  ```JavaScript
+  const http = require("http");
+
+  const server = http.createServer((request, response) => {
+    //Request
+    console.log("headers", request.headers);
+    console.log("method", request.method);
+    console.log("url", request.url);
+
+    //Response
+    const user = {
+      name: "CodeXplore",
+      hobby: "Teaching Code",
+    };
+
+    response.setHeader("Content-Type", "application/json");
+    //Since sending through server -> must be in JSON format
+    response.end(JSON.stringify(user));
+  });
+
+  server.listen(3000);
+
+  ```
+   [(Back to top)](#table-of-contents)
