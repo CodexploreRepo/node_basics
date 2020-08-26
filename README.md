@@ -20,29 +20,30 @@
     
 -  **How to import/export a Node module:** <br/>
     - *Method 1 [New Way]:* **import - export**<br/>
-    **app.js**
-    ```JavaScript
-    import largeNumber, {smallNumber} from 'module.js'
-    ```
-    **module.js**
-    ```JavaScript
-    const largeNumber = 356;
-    const smallNumber = 1;
+    
+      **app.js**
+      ```JavaScript
+      import largeNumber, {smallNumber} from 'module.js'
+      ```
+      **module.js**
+      ```JavaScript
+      const largeNumber = 356;
+      const smallNumber = 1;
 
-    export default largeNumber;
-    export smallNumber;
-    ```
+      export default largeNumber;
+      export smallNumber;
+      ```
     - *Method 2 [Conventional Way]:* **require - modules.export**<br/>
-    **app.js**
-    ```JavaScript
-    const c = require('./module.js');
-    console.log(c.largeNumber);
-    ```
-    **module.js**
-    ```JavaScript
-    const largeNumber = 356;
+      **app.js**
+      ```JavaScript
+      const c = require('./module.js');
+      console.log(c.largeNumber);
+      ```
+      **module.js**
+      ```JavaScript
+      const largeNumber = 356;
 
-    module.exports = {
-      largeNumber: largeNumber;
-    }
+      module.exports = {
+        largeNumber: largeNumber;
+      }
     ```
