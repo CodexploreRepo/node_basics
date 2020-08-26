@@ -8,6 +8,7 @@
   - [Building a Server](#building-a-server)
 - [Introduction to Express JS](#introduction-to-express-js)
 - [Express Middleware](#express-middleware)
+- [RESTful API](#restful-api)
 - [Postman](#postman)
 
     
@@ -116,6 +117,16 @@
     next();
   });
   ```
+
+# RESTful API
+- Define a set of functions in the server (URL Param) which developer can perform the requests and receive the response from the server
+- RESTFul means creating the rules that everybody agrees on the compatibity between systems
+  - GET: receive the resource
+  - PUT: update the resource
+  - POST: create the resource
+  - DELETE: remove the resource
+- State-less: call can be made independently, and each call contains all necessary data to complete itself successfully 
+  - i.e: Server does not need to remember anything, each comming request has enough information that the server can response 
 
 # Postman
 ### Body
