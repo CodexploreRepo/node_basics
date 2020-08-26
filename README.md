@@ -23,6 +23,7 @@
     | fs | require('fs')| to work with File System|
     | http|require('http')| to build the server|
     | nodemon| npm install nodemon | to auto reload the server when we make some changes in our code <br> "script" : {"start": "nodemon index.js"} so when we run npm start ~ npm nodemon index.js|
+    | body-parser | included in Express |//Body-Parser middleware to parse the body of the request<br/> -app.use(express.urlencoded({ extended: false })); //to parse urlencoded<br> -app.use(express.json()); //to parse json |
     
 -  **How to import/export a Node module:** <br/>
     - *Method 1 [New Way]:* **import - export**<br/>
@@ -56,8 +57,7 @@
   [(Back to top)](#table-of-contents)
 
 ### Building a Server
-  - [Most Popular Back-End Framework Survey](https://2019.stateofjs.com/back-end/)
-  
+ 
   ```JavaScript
   const http = require("http");
 
@@ -84,7 +84,9 @@
    [(Back to top)](#table-of-contents)
 
 # Introduction to Express JS
-- Express is module to **build the server** instead of re-write the build server code again & again
+  - [Most Popular Back-End Framework Survey](https://2019.stateofjs.com/back-end/)
+ 
+  - Express is module to **build the server** instead of re-write the build server code again & again
 
   ```JavaScript
   const express = require("express");
