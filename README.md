@@ -85,4 +85,19 @@
 ### Introduction to Express JS
 - Express is module to build the server instead of re-write the build server code again & again
 
+  ```JavaScript
+  const express = require("express");
+  const app = express();
+
+  app.get("/", (req, res) => {
+    const user = {
+      name: "CodeXplore",
+      hobby: "Hello World",
+    };
+   
+    res.send(user); //Express help to auto-JSON.stringify
+  });
+
+  app.listen(3000);
+  ```
    [(Back to top)](#table-of-contents)
