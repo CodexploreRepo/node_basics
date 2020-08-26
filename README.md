@@ -23,7 +23,7 @@
     | fs | require('fs')| to work with File System|
     | http|require('http')| to build the server|
     | nodemon| npm install nodemon | to auto reload the server when we make some changes in our code <br> "script" : {"start": "nodemon index.js"} so when we run npm start ~ npm nodemon index.js|
-    | body-parser | included in Express |//Body-Parser middleware to parse the body of the request<br/> -app.use(express.urlencoded({ extended: false })); //to parse urlencoded<br> -app.use(express.json()); //to parse json |
+    | body-parser | included in Express |//Body-Parser middleware to parse the body of the request<br/>How to use:<br> `app.use(express.urlencoded({ extended: false })); //to parse urlencoded`<br> `app.use(express.json()); //to parse json`|
     
 -  **How to import/export a Node module:** <br/>
     - *Method 1 [New Way]:* **import - export**<br/>
@@ -112,6 +112,7 @@
   app.use((req, res, next) => {
     console.log("Middleware");
     //Do something here 
+    
     next();
   });
   ```
