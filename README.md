@@ -6,6 +6,7 @@
 - [Bascis](#basics)
   - [Modules in Node](#modules-in-node)
   - [Building a Server](#building-a-server)
+  - [Introduction to Express JS](#introduction-to-express-js)
 
     
 
@@ -17,6 +18,7 @@
     |package.json| npm init **-y**| to create package.json; -y flag to skip input
     |dev mod | npm install <module-name> **--save-dev**| to install module in devDependencies for deveploment only, not production|
     |||
+    |express|npm install express| to 3rd party framework to build server, no need to use http module & DRY|
     | fs | require('fs')| to work with File System|
     | http|require('http')| to build the server|
     | nodemon| npm install nodemon | to auto reload the server when we make some changes in our code <br> "script" : {"start": "nodemon index.js"} so when we run npm start ~ npm nodemon index.js|
@@ -79,3 +81,6 @@
 
   ```
    [(Back to top)](#table-of-contents)
+
+### Introduction to Express 
+- Express is module to build the server instead of re-write the build server code again & again
