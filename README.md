@@ -53,7 +53,7 @@
   [(Back to top)](#table-of-contents)
 
 ### Building a Server
-  - [Survey about Most Popular Back-End Framework](https://2019.stateofjs.com/back-end/)
+  - [Most Popular Back-End Framework Survey](https://2019.stateofjs.com/back-end/)
   
   ```JavaScript
   const http = require("http");
@@ -67,7 +67,7 @@
     //Response
     const user = {
       name: "CodeXplore",
-      hobby: "Teaching Code",
+      hobby: "Hello World",
     };
 
     response.setHeader("Content-Type", "application/json");
