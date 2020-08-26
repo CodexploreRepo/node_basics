@@ -1,4 +1,4 @@
-# Node JS
+# Node.js 
 
 # Table of contents
 
@@ -8,6 +8,8 @@
   - [Building a Server](#building-a-server)
 - [Introduction to Express JS](#introduction-to-express-js)
 - [Express Middleware](#express-middleware)
+
+- [Postman](#postman)
 
     
 
@@ -115,3 +117,9 @@
     next();
   });
   ```
+
+# Postman
+### Body
+- **form-data**: similar to form submit in Front-End with Key-Value pair
+- **x-www-form-urlendcoded**: similar to form submit in Front-End with Key-Value pair
+- **raw**: select JSON
