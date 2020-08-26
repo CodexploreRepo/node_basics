@@ -84,7 +84,7 @@
    [(Back to top)](#table-of-contents)
 
 # Introduction to Express JS
-- Express is module to build the server instead of re-write the build server code again & again
+- Express is module to **build the server** instead of re-write the build server code again & again
 
   ```JavaScript
   const express = require("express");
@@ -104,3 +104,12 @@
    [(Back to top)](#table-of-contents)
 
 # Express Middleware
+
+  ```JavaScript
+  //Express Middleware: do smtg with request to make it easier to work with
+  app.use((req, res, next) => {
+    console.log("Middleware");
+    //Do something here 
+    next();
+  });
+  ```
