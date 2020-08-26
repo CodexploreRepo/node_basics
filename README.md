@@ -53,7 +53,7 @@
       module.exports = {
         largeNumber: largeNumber;
       }
-    ```
+      ```
   [(Back to top)](#table-of-contents)
 
 ### Building a Server
@@ -79,7 +79,6 @@
   });
 
   server.listen(3000);
-
   ```
    [(Back to top)](#table-of-contents)
 
