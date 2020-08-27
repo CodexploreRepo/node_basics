@@ -10,6 +10,7 @@
 - [Express Middleware](#express-middleware)
 - [RESTful API](#restful-api)
   - [Request](#request)
+  - [Response](#response)
 - [Postman](#postman)
   
 
@@ -139,6 +140,8 @@
    |`req.headers`| `Content-Type : application/json` <br> `name : CodeXplore` | |
    |`req.params`| `app.get("/:id")` | |
 
+## Response
+- Status: `res.status(200)` + .send("getting root");
 
 # Postman
 ### Body
