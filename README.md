@@ -134,8 +134,8 @@
 
    | Type   |     Commands      |  Description |
    |----------|:-------------:|------|
-   |`req.query`| `?name=CodeXPlore&age=25` | `{name: 'CodeXPlore', age: '25' }`|
-   |`req.body`| form-data, urlendcoded, raw-json<br/>please refer Postman-Body part||
+   |`req.query`| https://localhost:3000/`?name=CodeXPlore&age=25` | `{name: 'CodeXPlore', age: '25' }`|
+   |`req.body`| **form-data**, **urlendcoded**, **raw-json**<br/>please refer Postman/Body part||
    |`req.headers`| `Content-Type : application/json` <br> `name : CodeXplore` in Postman | |
    |`req.params`| `app.get("/:id")` | |
 
