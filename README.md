@@ -111,6 +111,10 @@
   ```
    [(Back to top)](#table-of-contents)
 ## Loading Static Files
+- Static Files: **index.htmls, css**
+  - Step 1: Create a `public` folder in same directory with `server.js`
+  - Step 2: In `server.js`, add this: `app.use(express.static(__dirname + "/public"));`
+
 
 # Express Middleware
 
