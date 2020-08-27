@@ -7,6 +7,8 @@
   - [Modules in Node](#modules-in-node)
   - [Building a Server](#building-a-server)
 - [Introduction to Express JS](#introduction-to-express-js)
+  - [Building a Server via Express](#building-a-server-via-express)
+  - [Loading Static Files](#loading-static-files)
 - [Express Middleware](#express-middleware)
 - [RESTful API](#restful-api)
   - [Request](#request)
@@ -89,7 +91,7 @@
 
 # Introduction to Express JS
   - [Most Popular Back-End Framework Survey](https://2019.stateofjs.com/back-end/)
- 
+## Building a Server via Express]
   - Express is module to **build the server** instead of re-write the build server code again & again
 
   ```JavaScript
@@ -108,6 +110,7 @@
   app.listen(3000);
   ```
    [(Back to top)](#table-of-contents)
+## Loading Static Files
 
 # Express Middleware
 
