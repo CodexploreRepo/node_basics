@@ -141,7 +141,7 @@
    |`req.params`| `app.get("/:id")` | |
 
 ## Response
-- Status: `res.status(200)` + .send("getting root");
+- Status: `res.status(200).send("Sending Res");`
 
 # Postman
 ### Body
