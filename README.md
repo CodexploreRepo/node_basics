@@ -5,7 +5,7 @@
 - [Table of contents](#table-of-contents)
 - [Bascis](#basics)
   - [Modules in Node](#modules-in-node)
-  - [Node File System module](#node-file-system-module)
+  - [File System module in Node](#file-system-module-in-node)
   - [Building a Server](#building-a-server)
 - [Introduction to Express JS](#introduction-to-express-js)
   - [Building a Server via Express](#building-a-server-via-express)
@@ -62,7 +62,29 @@
       ```
   [(Back to top)](#table-of-contents)
 
-## Node File System module
+## File System module in Node
+
+### Read File
+
+  #### Async - Read
+
+  ```JavaScript
+  fs.readFile("./public/index.html", (err, data) => {
+    if (err) {
+      console.log(err);
+    }
+    //Print out data from the file; .toString() to encode the data read
+    console.log("Async", data.toString("utf-8"));
+  });
+  ```
+  
+  #### Sync - Read
+
+  ```JavaScript
+  const file = fs.readFileSync("./public/index.html");
+  console.log("Sync", file.toString("utf-8"));
+  ```
+  
 
 ## Building a Server
  
