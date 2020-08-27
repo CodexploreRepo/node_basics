@@ -67,7 +67,7 @@
 const fs = require("fs");
 ```
 ### Read File
-  #### Async - readFile
+  #### Async - readFile (Recommended for handling massive files when building Server)
   - `Async readFile` starts by reading this `"./public/index.html"` file, and you can continue with other code
   - Once done, the call back function `(err,data) => {...}` will perform the tasks, either give you `error` or `data`, inside that call back function
   ```JavaScript
@@ -86,6 +86,33 @@ const fs = require("fs");
   console.log("Sync", file.toString("utf-8"));
   ```
   
+### Append File
+```JavaScript
+//APPEND
+fs.appendFile("./hello.txt", "This is so cool!", (err) => {
+  if (err) {
+    console.log(err);
+  }
+});
+```
+### Write File
+```JavaScript
+//WRITE
+fs.writeFile("bye.txt", "Sad to see you go", (err) => {
+  if (err) {
+    console.log(err);
+  }
+});
+```
+### Write File
+```JavaScript
+//DELTE
+fs.unlink("./bye.txt", (err) => {
+  if (err) {
+    console.log(err);
+  }
+});
+```
 
 ## Building a Server
  
@@ -105,6 +132,7 @@ const fs = require("fs");
     };
 
     response.setHeader("Content-Type", "application/json");
+    
     //Since sending through server -> must be in JSON format
     response.end(JSON.stringify(user));
   });
