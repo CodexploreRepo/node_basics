@@ -63,11 +63,13 @@
   [(Back to top)](#table-of-contents)
 
 ## File System module in Node
-
+```JavaScript
+const fs = require("fs");
+```
 ### Read File
-
-  #### Async - Read
-
+  #### Async - readFile
+  - `Async readFile` starts by reading this `"./public/index.html"` file, and you can continue with other code
+  - Once done, the call back function `(err,data) => {...}` will perform the tasks, either give you `error` or `data`, inside that call back function
   ```JavaScript
   fs.readFile("./public/index.html", (err, data) => {
     if (err) {
@@ -77,9 +79,8 @@
     console.log("Async", data.toString("utf-8"));
   });
   ```
-  
-  #### Sync - Read
-
+  #### Sync - readFileSync
+  - `readFileSync`: going to read this `"./public/index.html"` file, so dont do anything (i.e: below code) until I fininsh reading the file & assign to `file` variable
   ```JavaScript
   const file = fs.readFileSync("./public/index.html");
   console.log("Sync", file.toString("utf-8"));
