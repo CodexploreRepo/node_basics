@@ -9,7 +9,9 @@
 - [Introduction to Express JS](#introduction-to-express-js)
 - [Express Middleware](#express-middleware)
 - [RESTful API](#restful-api)
+  - [Request](#request)
 - [Postman](#postman)
+  
 
     
 
@@ -127,6 +129,8 @@
   - DELETE: remove the resource
 - State-less: call can be made independently, and each call contains all necessary data to complete itself successfully 
   - i.e: Server does not need to remember anything, each comming request has enough information that the server can response 
+
+### Request
 
 # Postman
 ### Body
