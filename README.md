@@ -130,7 +130,15 @@
 - State-less: call can be made independently, and each call contains all necessary data to complete itself successfully 
   - i.e: Server does not need to remember anything, each comming request has enough information that the server can response 
 
-### Request
+## Request
+
+   | Type   |     Commands      |  Description |
+   |----------|:-------------:|------|
+   |`req.query`| `?name=CodeXPlore&age=25` | `{name: 'CodeXPlore', age: '25' }`|
+   |`req.body`| form-data, urlendcoded, raw-json<br/>please refer Postman-Body part||
+   |`req.headers`| `Content-Type : application/json` <br> `name : CodeXplore` in Postman | |
+   |`req.params`| `app.get("/:id")` | |
+
 
 # Postman
 ### Body
