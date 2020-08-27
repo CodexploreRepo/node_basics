@@ -5,6 +5,7 @@
 - [Table of contents](#table-of-contents)
 - [Bascis](#basics)
   - [Modules in Node](#modules-in-node)
+  - [Node File System module](#node-file-system-module)
   - [Building a Server](#building-a-server)
 - [Introduction to Express JS](#introduction-to-express-js)
   - [Building a Server via Express](#building-a-server-via-express)
@@ -16,10 +17,8 @@
 - [Postman](#postman)
   
 
-    
-
 # Basics
-### Modules in Node
+## Modules in Node
 -  **Common Node Modules** <br/>
     | Module   |      Command      |  Description |
     |----------|:-------------:|------|
@@ -63,7 +62,9 @@
       ```
   [(Back to top)](#table-of-contents)
 
-### Building a Server
+## Node File System module
+
+## Building a Server
  
   ```JavaScript
   const http = require("http");
@@ -110,6 +111,7 @@
   app.listen(3000);
   ```
    [(Back to top)](#table-of-contents)
+
 ## Loading Static Files
 - Static Files: **index.htmls, css**
   - Step 1: Create a `public` folder in same directory with `server.js`
