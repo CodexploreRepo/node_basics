@@ -63,6 +63,7 @@
   [(Back to top)](#table-of-contents)
 
 ## File System module in Node
+- **Usage**: I/O to read data from Excel files, to read from robot to get the data that robot detects
 ```JavaScript
 const fs = require("fs");
 ```
@@ -104,7 +105,7 @@ fs.writeFile("bye.txt", "Sad to see you go", (err) => {
   }
 });
 ```
-### Write File
+### Delete File
 ```JavaScript
 //DELTE
 fs.unlink("./bye.txt", (err) => {
