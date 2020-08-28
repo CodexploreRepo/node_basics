@@ -202,6 +202,7 @@ fs.unlink("./bye.txt", (err) => {
    |`req.params`| `app.get("/:id")` | |
 
 ## Response
+- JSON  : `res.json(user.entries)`
 - Status: `res.status(200).send("Sending Res");`
 
 # Postman
