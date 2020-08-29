@@ -26,11 +26,11 @@
     |dev mod | npm install <module-name> **--save-dev**| to install module in devDependencies for deveploment only, not production|
     |||
     |express|npm install express| to 3rd party framework to build server, no need to use http module & DRY|
-    | fs | require('fs')| to work with File System|
+    | fs | require('fs')| to work with [File System](#file-system-module-in-node)|
     | http|require('http')| to build the server|
     | nodemon| npm install nodemon | to auto reload the server when we make some changes in our code <br> `"script" : {"start": "nodemon index.js"}` so when we run npm start ~ npm nodemon index.js|
     | body-parser | included in Express |Body-Parser middleware to parse the body of the request<br/>Otherwise, console.log(req.body) will return `undefined`<br/>How to use:<br> `app.use(express.urlencoded({ extended: false })); //to parse urlencoded`<br> `app.use(express.json()); //to parse json`|
-    |bcrypt-nodejs|npm install bcrypt-nodejs|
+    |bcrypt-nodejs|npm install bcrypt-nodejs|allow us to create secure login via encrypt (hash) the password to hash|
 -  **How to import/export a Node module:** <br/>
     - *Method 1 [New Way]:* **import - export**<br/>
     
