@@ -259,16 +259,24 @@ storeUserPassword(userPassword, saltRounds)
 
 ### CORS Request Types
 - There are *two types of CORS request*: "simple" requests, and "preflight" requests, and it's the browser that determines which is used.
-  - "Simple" request: 
+  - **"Simple"** request: 
     - One of these methods is used: `GET`, `POST`, or `HEAD`
     - Using the `Content-Type` header, only the following values are allowed: `application/x-www-form-urlencoded`, `multipart/form-data`, or `text/plain`
-  - "Preflight" request: `
+  <br>
+  - **"Preflight"** request: 
     - If a request does not meet the criteria for a simple request, the browser will instead make an automatic preflight request using the `OPTIONS` method.
-    - The preflight request sets the mode as OPTIONS and sets a couple of headers to describe the actual request that is to follow:
-      - Access-Control-Request-Method: The intended method of the request (e.g., GET or POST)
-      - Access-Control-Request-Headers: An indication of the custom headers that will be sent with the request
-      - Origin: The usual origin header that contains the script's current origin
+    - The preflight request sets the mode as `OPTIONS` and sets a couple of headers to describe the actual request that is to follow:
+      - `Access-Control-Request-Method`: The intended method of the request (e.g., GET or POST)
+      - `Access-Control-Request-Headers`: An indication of the custom headers that will be sent with the request
+      - `Origin`: The usual origin header that contains the script's current origin
     
+    ```
+    # Request
+      curl -i -X OPTIONS localhost:3001/api/ping \
+      -H 'Access-Control-Request-Method: GET' \
+      -H 'Access-Control-Request-Headers: Content-Type, Accept' \
+      -H 'Origin: http://localhost:3000'
+    ```
 # Postman
 ### Body
 - **form-data**: similar to form submit in Front-End with Key-Value pair
