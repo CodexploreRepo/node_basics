@@ -15,6 +15,7 @@
 - [RESTful API](#restful-api)
   - [Request](#request)
   - [Response](#response)
+- [Cross-Origin Resource Sharing - CORS](#cors)
 - [Postman](#postman)
   
 
@@ -247,6 +248,10 @@ storeUserPassword(userPassword, saltRounds)
 ## Response
 - JSON  : `res.json(user.entries)`
 - Status: `res.status(200).send("Sending Res");`
+
+# CORS
+- **Cross-Origin Resource Sharing (CORS)** is a protocol that enables scripts running on a browser client to interact with resources from a different origin.
+
 
 # Postman
 ### Body
