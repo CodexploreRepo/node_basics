@@ -16,6 +16,7 @@
   - [Request](#request)
   - [Response](#response)
 - [Cross-Origin Resource Sharing - CORS](#cors)
+  - [What is CORS ?](#what-is-cors)
 - [Postman](#postman)
   
 
@@ -250,7 +251,7 @@ storeUserPassword(userPassword, saltRounds)
 - Status: `res.status(200).send("Sending Res");`
 
 # CORS
-### What is CORS?
+### What is CORS
 - Thanks to the **same-origin policy** followed by `XMLHttpRequest` and `fetch`, JavaScript can only make calls to URLs that live on the same origin as the location where the script is running. For example, if a JavaScript app wishes to make an AJAX call to an API running on a different domain, it would be blocked from doing so thanks to the same-origin policy.
 - **Cross-Origin Resource Sharing (CORS)** is a protocol that enables scripts running on a browser client to interact with resources from a different origin.
   0
@@ -262,7 +263,7 @@ storeUserPassword(userPassword, saltRounds)
   - **"Simple"** request: 
     - One of these methods is used: `GET`, `POST`, or `HEAD`
     - Using the `Content-Type` header, only the following values are allowed: `application/x-www-form-urlencoded`, `multipart/form-data`, or `text/plain`
-  <br>
+
   - **"Preflight"** request: 
     - If a request does not meet the criteria for a simple request, the browser will instead make an automatic preflight request using the `OPTIONS` method.
     - The preflight request sets the mode as `OPTIONS` and sets a couple of headers to describe the actual request that is to follow:
@@ -270,13 +271,36 @@ storeUserPassword(userPassword, saltRounds)
       - `Access-Control-Request-Headers`: An indication of the custom headers that will be sent with the request
       - `Origin`: The usual origin header that contains the script's current origin
     
-    ```
-    # Request
+      - An example of such a request might look like this: This request basically says "I would like to make a `GET` request to localhost:3001/api/ping  with the `Content-Type` and `Accept` headers from http://localhost:3000 - is that possible?".
+    
+      ```
+      # Request
       curl -i -X OPTIONS localhost:3001/api/ping \
       -H 'Access-Control-Request-Method: GET' \
       -H 'Access-Control-Request-Headers: Content-Type, Accept' \
       -H 'Origin: http://localhost:3000'
-    ```
+      ```
+
+### Identifying a CORS Response
+- When a server has been configured correctly to allow cross-origin resource sharing, some special headers will be included. 
+- the primary one that determines who can access a resource is `Access-Control-Allow-Origin`
+
+- So a response to the earlier example might look like this:
+  ```
+  HTTP/1.1 204 No Content
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE
+  Vary: Access-Control-Request-Headers
+  Access-Control-Allow-Headers: Content-Type, Accept
+  Content-Length: 0
+  Date: Fri, 05 Apr 2019 11:41:08 GMT
+  Connection: keep-alive
+  ```
+  - `Access-Control-Allow-Origin` header, in this case `*`, allows the request to be made from any origin.
+  - `Access-Control-Allow-Methods` header describes only the accepted HTTP methods, in this case: `GET,HEAD,PUT,PATCH,POST,DELETE`
+  
+### How to Add CORS to a Nodejs Express App
+      
 # Postman
 ### Body
 - **form-data**: similar to form submit in Front-End with Key-Value pair
