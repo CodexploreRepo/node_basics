@@ -250,9 +250,25 @@ storeUserPassword(userPassword, saltRounds)
 - Status: `res.status(200).send("Sending Res");`
 
 # CORS
+### What is CORS?
+- Thanks to the **same-origin policy** followed by `XMLHttpRequest` and `fetch`, JavaScript can only make calls to URLs that live on the same origin as the location where the script is running. For example, if a JavaScript app wishes to make an AJAX call to an API running on a different domain, it would be blocked from doing so thanks to the same-origin policy.
 - **Cross-Origin Resource Sharing (CORS)** is a protocol that enables scripts running on a browser client to interact with resources from a different origin.
+  0
+- **Cross-Origin Resource Sharing (CORS)** is a protocol that enables scripts running on a browser client to interact with resources from a different origin
+  - For example, if you're running a React SPA that makes calls to an API backend running on a different domain
 
-
+### CORS Request Types
+- There are *two types of CORS request*: "simple" requests, and "preflight" requests, and it's the browser that determines which is used.
+  - "Simple" request: 
+    - One of these methods is used: `GET`, `POST`, or `HEAD`
+    - Using the `Content-Type` header, only the following values are allowed: `application/x-www-form-urlencoded`, `multipart/form-data`, or `text/plain`
+  - "Preflight" request: `
+    - If a request does not meet the criteria for a simple request, the browser will instead make an automatic preflight request using the `OPTIONS` method.
+    - The preflight request sets the mode as OPTIONS and sets a couple of headers to describe the actual request that is to follow:
+      - Access-Control-Request-Method: The intended method of the request (e.g., GET or POST)
+      - Access-Control-Request-Headers: An indication of the custom headers that will be sent with the request
+      - Origin: The usual origin header that contains the script's current origin
+    
 # Postman
 ### Body
 - **form-data**: similar to form submit in Front-End with Key-Value pair
