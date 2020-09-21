@@ -38,6 +38,9 @@
     | body-parser | included in Express |Body-Parser middleware to parse the body of the request<br/>Otherwise, console.log(req.body) will return `undefined`<br/>How to use:<br> `app.use(express.urlencoded({ extended: false })); //to parse urlencoded`<br> `app.use(express.json()); //to parse json`|
     |[bcrypt-nodejs](https://github.com/kelektiv/node.bcrypt.js)|npm install bcrypt-nodejs|allow us to create secure login via encrypt (hash) the password to hash<br>bcrypt is 15 years old and has been vetted by the crypto community.|
     |cors|npm install cors|An example of a cross-origin request: the front-end JavaScript code served from `https://domain-a.com` uses `XMLHttpRequest` to make a request for `https://domain-b.com/data.json`<br>How to add into Node JS Back-`const cors = require("cors");`<br>`app.use(cors());`|
+    ||||
+    |Knex| npm install knex|SQL query builder for Postgres, MSSQL, MySQL, MariaDB, SQLite3, Oracle, and Amazon Redshift |
+    |PostgreSQL|npm install pg|Install Postg|
 -  **How to import/export a Node module:** <br/>
     - *Method 1 [New Way]:* **import - export**<br/>
     
