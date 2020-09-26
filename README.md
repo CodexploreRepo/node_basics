@@ -373,8 +373,26 @@ In package.json: On Heroku, dev dependencies never get installed => need to modi
     "start:dev": "nodemon server.js"
     .....    
   },
-
 ```
 
+### Heroku Deploy
+- [Step 1]: Login to Heroku Web => Create an app "project-name-back-end-app"
+- [Step 2]: Go to Terminal @ Back-End Folder
+If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+```
+$ heroku login
+```
+Clone the repository
+Use Git to clone smart-brain-codexplore's source code to your local machine.
+```
+$ heroku git:clone -a project-name-back-end-app
+```
 
+```
+cd back-end
+git init 
+
+git add .
+git commit -m "my First Commit"
+```
 [(Back to top)](#table-of-contents)
