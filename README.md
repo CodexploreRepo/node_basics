@@ -453,6 +453,17 @@ const db = knex({
   },
 });
 ```
-
+### Front-End Heroku Deploy
+[Step 1] To avoid any errors when deploying to Heroku (some students have mentioned that their deployment fails because of a certain version of create react app that they are using), there is a way to make sure your deployment succeeds.
+```
+npm install serve --s
+```
+Replace the npm start command  in `package.json` of Front-End folder like this:
+```JavaScript
+"scripts": {
+    "start": "serve -s build",
+    // it used to be like this, which you can remove now:
+    // "start": "react-scripts start",
+```
 
 [(Back to top)](#table-of-contents)
