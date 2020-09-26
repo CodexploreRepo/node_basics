@@ -401,8 +401,11 @@ git init
 
 git add .
 git commit -m "my First Commit"
+
+#Push the App to Heroku Server
 git push heroku master
-git commit -m "my First Commit"
 ```
+Once the App is uploaded, there is the new Back-End link: https://project-name-back-end-app.herokuapp.com
+
 
 [(Back to top)](#table-of-contents)
