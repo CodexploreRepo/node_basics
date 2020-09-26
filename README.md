@@ -418,6 +418,7 @@ Once the App is uploaded, there is the new Back-End link: https://project-name-b
    |2|`heroku pg:info`| Check the info of the DB to modify `Back-End Knex` DB Connection|
    |3|`heroku pg:psql`| To access PSQL DB to create Tables|
    |4|`heroku logs --tail`| Check Server log |
+   |5|`heroku config`| To check the `DATABASE_URL`|
 
 ```
 --Create "Users" Table
@@ -436,7 +437,7 @@ CREATE TABLE login (
 );
 ```
 
-- [Step 3] Modify DB Knex connection in Back-end server.js file
+- [Step 3] Modify `DB Knex` connection in Back-end `server.js` file
 
 ```JavaScript
 
@@ -444,7 +445,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;   //Need to modify like this to us
 const db = knex({
   client: "pg",
   connection: {
-    connectionString: process.env.DATABASE_URL,
+    connectionString: process.env.DATABASE_URL, //DATABASE_URL will be in the Environment Variable on Heroku
     //Need to modify like this to use Free DB on Heroku
     ssl: {
       rejectUnauthorized: false,
