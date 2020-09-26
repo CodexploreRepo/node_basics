@@ -375,7 +375,7 @@ In package.json: On Heroku, dev dependencies never get installed => need to modi
   },
 ```
 
-### Heroku Deploy
+### Back-End Heroku Deploy
 - [Step 1]: Login to Heroku Web => Create an app "project-name-back-end-app"
 - [Step 2]: Go to Terminal @ Back-End Folder
 If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
@@ -406,6 +406,12 @@ git commit -m "my First Commit"
 git push heroku master
 ```
 Once the App is uploaded, there is the new Back-End link: https://project-name-back-end-app.herokuapp.com
+--> NEED to CHANGE all `fetch(http://localhost:3000)` in Front-End app to `fetch(https://project-name-back-end-app.herokuapp.com)`
+
+### Database Heroku Connection
+- [Step 1]: Select Database > create Postgre DB > Install Heroku Postgres with Back-End app
+- [Step 2]: Go to Terminal @ Back-End Folder
+  - 
 
 
 [(Back to top)](#table-of-contents)
