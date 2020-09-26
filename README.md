@@ -22,6 +22,7 @@
   - [Identifying a CORS Response](#Identifying-a-cors-response)
   - [How to Add CORS to a Nodejs Express App](#how-to-add-cors-to-a-nodejs-express-app)
 - [Postman](#postman)
+- [Production Deployment](#production-deployment)
   
 
 # Basics
@@ -357,3 +358,10 @@ app.use(cors());
 - **raw**: select JSON
 
    [(Back to top)](#table-of-contents)
+   
+# Production Deployment
+How to deploy the full-stack application below to Production ?
+![Screenshot 2020-09-26 at 12 53 00 PM](https://user-images.githubusercontent.com/64508435/94330453-77321f80-fff7-11ea-9fed-045160d9a132.png)
+
+
+[(Back to top)](#table-of-contents)
