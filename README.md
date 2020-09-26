@@ -23,6 +23,7 @@
   - [How to Add CORS to a Nodejs Express App](#how-to-add-cors-to-a-nodejs-express-app)
 - [Postman](#postman)
 - [Production Deployment](#production-deployment)
+  - [Back-End Heroku Deploy](#back-end-heroku-deploy)
   
 
 # Basics
@@ -363,7 +364,9 @@ app.use(cors());
 How to deploy the full-stack application below to Production ?
 ![Screenshot 2020-09-26 at 12 53 00 PM](https://user-images.githubusercontent.com/64508435/94330453-77321f80-fff7-11ea-9fed-045160d9a132.png)
 
-## Back-end:
+
+### Back-End Heroku Deploy
+
 In package.json: On Heroku, dev dependencies never get installed => need to modify start script
 - In Heroku, npm start runs by default and loads server.js from a normal node command
 - Locally, just run in your terminal `npm run start:dev`
@@ -374,8 +377,6 @@ In package.json: On Heroku, dev dependencies never get installed => need to modi
     .....    
   },
 ```
-
-### Back-End Heroku Deploy
 - [Step 1]: Login to Heroku Web => Create an app "project-name-back-end-app"
 - [Step 2]: Go to Terminal @ Back-End Folder
 If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
