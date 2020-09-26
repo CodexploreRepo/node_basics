@@ -387,12 +387,12 @@ Use Git to clone smart-brain-codexplore's source code to your local machine.
 ```
 $ heroku git:clone -a project-name-back-end-app
 ```
-Check if Git move to Heroku
+Check if git origin move to heroku
 ```
 git remote -v
 
-heroku  https://git.heroku.com/peaceful-temple-10139.git (fetch)
-heroku  https://git.heroku.com/peaceful-temple-10139.git (push)
+heroku  https://git.heroku.com/project-name-back-end-app.git (fetch)
+heroku  https://git.heroku.com/project-name-back-end-app.git (push)
 ```
 
 ```
@@ -401,5 +401,8 @@ git init
 
 git add .
 git commit -m "my First Commit"
+git push heroku master
+git commit -m "my First Commit"
 ```
+
 [(Back to top)](#table-of-contents)
