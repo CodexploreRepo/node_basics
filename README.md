@@ -454,7 +454,7 @@ const db = knex({
 });
 ```
 ### Front-End Heroku Deploy
-[Step 1] To avoid any errors when deploying to Heroku (some students have mentioned that their deployment fails because of a certain version of create react app that they are using), there is a way to make sure your deployment succeeds.
+- [Step 1] To avoid any errors when deploying to Heroku (some students have mentioned that their deployment fails because of a certain version of create react app that they are using), there is a way to make sure your deployment succeeds.
 ```
 npm install serve --s
 ```
@@ -465,5 +465,35 @@ Replace the npm start command  in `package.json` of Front-End folder like this:
     // it used to be like this, which you can remove now:
     // "start": "react-scripts start",
 ```
+- [Step 2]: Login to Heroku Web => Create an app "project-name-front-end-app"
+- [Step 3]: Go to Terminal @ Back-End Folder
+If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+```
+$ heroku login
+```
+Clone the repository
+Use Git to clone smart-brain-codexplore's source code to your local machine.
+```
+$ heroku git:clone -a project-name-front-end-app
+```
+Check if git origin move to heroku
+```
+git remote -v
+
+heroku  https://git.heroku.com/project-name-front-end-app.git (fetch)
+heroku  https://git.heroku.com/project-name-front-end-app.git (push)
+```
+
+```
+cd back-end
+git init 
+
+git add .
+git commit -m "my First Commit"
+
+#Push the App to Heroku Server
+git push heroku master
+```
+
 
 [(Back to top)](#table-of-contents)
