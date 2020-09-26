@@ -363,5 +363,18 @@ app.use(cors());
 How to deploy the full-stack application below to Production ?
 ![Screenshot 2020-09-26 at 12 53 00 PM](https://user-images.githubusercontent.com/64508435/94330453-77321f80-fff7-11ea-9fed-045160d9a132.png)
 
+## Back-end:
+In package.json: On Heroku, dev dependencies never get installed => need to modify start script
+- In Heroku, npm start runs by default and loads server.js from a normal node command
+- Locally, just run in your terminal `npm run start:dev`
+```JavaScript
+"scripts": {
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
+    .....    
+  },
+
+```
+
 
 [(Back to top)](#table-of-contents)
