@@ -6,6 +6,7 @@
 - [Bascis](#basics)
   - [Modules in Node](#modules-in-node)
   - [File System module in Node](#file-system-module-in-node)
+  - [Environmental Variables](#environmental-variables)
   - [Storing User Passwords Securely](#storing-user-passwords-securely)
   - [Building a Server](#building-a-server)
 - [Introduction to Express JS](#introduction-to-express-js)
@@ -123,6 +124,24 @@ fs.unlink("./bye.txt", (err) => {
     console.log(err);
   }
 });
+```
+ [(Back to top)](#table-of-contents)
+ 
+## Environmental Variables
+Node allows to access Environmental Variables via `process.env`
+
+```JavaScript
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`app is running on port ${PORT}`);
+});
+```
+
+To inject the new Environmental Variables, like in this case is `PORT`, we need to open Bash Shell: Terminal > type "bash"
+```
+bash-3.2$ PORT=3050 node server.js
+app is running on port 3050
+
 ```
  [(Back to top)](#table-of-contents)
 ## Storing User Passwords Securely
