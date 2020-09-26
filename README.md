@@ -24,7 +24,8 @@
 - [Postman](#postman)
 - [Production Deployment](#production-deployment)
   - [Back-End Heroku Deploy](#back-end-heroku-deploy)
-  
+  - [Database Heroku Connection](#database-heroku-connection)
+  - [Front-End Heroku Deploy](#front-end-heroku-deploy)
 
 # Basics
 ## Modules in Node
