@@ -411,7 +411,47 @@ Once the App is uploaded, there is the new Back-End link: https://project-name-b
 ### Database Heroku Connection
 - [Step 1]: Select Database > create Postgre DB > Install Heroku Postgres with Back-End app
 - [Step 2]: Go to Terminal @ Back-End Folder
-  - 
+  
+   | Step   |      Command      |  Description |
+   |----------|:-------------:|------|
+   | 1 | `heroku addons`| to add the **heroku-postgresql** database to the |
+   |2|`heroku pg:info`| Check the info of the DB to modify `Back-End Knex` DB Connection|
+   |3|`heroku pg:psql`| To access PSQL DB to create Tables|
+   |4|`heroku logs --tail`| Check Server log |
+
+```
+--Create "Users" Table
+CREATE TABLE users (
+    id serial PRIMARY KEY,
+    name VARCHAR(100),
+    email text UNIQUE NOT NULL,
+    entries BIGINT DEFAULT 0,
+    joined TIMESTAMP NOT NULL
+);
+--Create "Login" Table
+CREATE TABLE login (
+    id serial PRIMARY KEY,
+    hash VARCHAR(100) NOT NULL,
+    email text UNIQUE NOT NULL
+);
+```
+
+- [Step 3] Modify DB Knex connection in Back-end server.js file
+
+```JavaScript
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;   //Need to modify like this to use Free DB on Heroku
+const db = knex({
+  client: "pg",
+  connection: {
+    connectionString: process.env.DATABASE_URL,
+    //Need to modify like this to use Free DB on Heroku
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
+});
+```
 
 
 [(Back to top)](#table-of-contents)
