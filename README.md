@@ -12,6 +12,8 @@
 - [Introduction to Express JS](#introduction-to-express-js)
   - [Building a Server via Express](#building-a-server-via-express)
   - [Loading Static Files](#loading-static-files)
+- [Routing](#routing)
+  - [URL Module](#url-module)
 - [Express Middleware](#express-middleware)
 - [RESTful API](#restful-api)
   - [Request](#request)
@@ -241,6 +243,22 @@ storeUserPassword(userPassword, saltRounds)
 - Static Files: **index.htmls, css**
   - Step 1: Create a `public` folder in same directory with `server.js`
   - Step 2: In `server.js`, add this: `app.use(express.static(__dirname + "/public"));`
+
+ [(Back to top)](#table-of-contents)
+
+# Routing
+## URL module
+- To parse URL on Broswer 
+```JavaScript
+const url = require('url');
+const server = http.createServer((request, response) => {
+    //Request
+    console.log("url", request.url);
+
+```
+
+
+
 
  [(Back to top)](#table-of-contents)
 # Express Middleware
