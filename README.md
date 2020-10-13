@@ -75,7 +75,8 @@
     **app.js**
     ```JavaScript 
     const c = require('./module.js'); 
-    console.log(c.largeNumber); ```
+    console.log(c.largeNumber); 
+    ```
     
     **module.js**
 
