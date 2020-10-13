@@ -18,6 +18,7 @@
 - [RESTful API](#restful-api)
   - [Request](#request)
   - [Response](#response)
+  - [API - Get Request](#get-request)
 - [Cross-Origin Resource Sharing - CORS](#cors)
   - [What is CORS ?](#what-is-cors)
   - [CORS Request Types](#cors-request-types)
@@ -348,6 +349,22 @@ app.use((req, res, next) => {
 
 - JSON : `res.json(user.entries)`
 - Status: `res.status(200).send("Sending Res");`
+
+## Get Request
+
+```JavaScript
+//Good Practice to Specify on API version on URL: /api/v1/
+app.get("/api/v1/tours", (req, res) => {
+  res.status(200).json({
+    status: "success",
+    //Give the users more understanding of API response
+    results: tours.length,
+    data: {
+      tours, //equivalent to tours: tours,
+    },
+  });
+});
+```
 
 [(Back to top)](#table-of-contents)
 
