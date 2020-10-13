@@ -19,6 +19,7 @@
   - [Request](#request)
   - [Response](#response)
   - [API - Get Request](#get-request)
+  - [API - POST Request](#post-request)
 - [Cross-Origin Resource Sharing - CORS](#cors)
   - [What is CORS ?](#what-is-cors)
   - [CORS Request Types](#cors-request-types)
@@ -362,6 +363,33 @@ app.get("/api/v1/tours", (req, res) => {
     data: {
       tours, //equivalent to tours: tours,
     },
+  });
+});
+```
+## Post Request
+- First, need to add `express.json` middleware in order to parse in-comming req.body into JavaScript Object
+```JavaScript
+//Middleware: added by using app.use()
+//express.json() is the middleware to parse the comming-in req.body to JavaScript Object
+app.use(express.json());
+```
+- Create a POST req:
+```JavaScript
+
+app.post("/api/v1/tours", (req, res) => {
+  const newId = tours[tours.length - 1].id + 1;
+  const newTour = Object.assign({ id: newId }, req.body);
+
+  tours.push(newTour);
+
+  fs.writeFile(toursFileName, JSON.stringify(tours), (err) => {
+    //201 = Created
+    res.status(201).json({
+      status: "success",
+      data: {
+        tour: newTour,
+      },
+    });
   });
 });
 ```
