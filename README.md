@@ -71,21 +71,23 @@
     export smallNumber;
     ```
 
-  - _Method 2 [Conventional Way]:_ **require - modules.export**<br/>
+  - _Method 2 [Conventional Way]:_ **require - module.exports**<br/>
     **app.js**
-    `JavaScript const c = require('./module.js'); console.log(c.largeNumber); `
+    ```JavaScript 
+    const c = require('./module.js'); 
+    console.log(c.largeNumber); ```
+    
     **module.js**
 
-    ````JavaScript
+    ```JavaScript
     const largeNumber = 356;
 
-        module.exports = {
-          largeNumber: largeNumber;
-        }
-        ```
+    module.exports = {
+        largeNumber: largeNumber;
+    }
+    ```
 
-    [(Back to top)](#table-of-contents)
-    ````
+[(Back to top)](#table-of-contents)
 
 ## File System module in Node
 
