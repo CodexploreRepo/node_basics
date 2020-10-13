@@ -19,7 +19,7 @@
   - [Request](#request)
   - [Response](#response)
   - [API - Get Request](#get-request)
-  - [API - POST Request](#post-request)
+  - [API - Post Request](#post-request)
 - [Cross-Origin Resource Sharing - CORS](#cors)
   - [What is CORS ?](#what-is-cors)
   - [CORS Request Types](#cors-request-types)
@@ -373,7 +373,7 @@ app.get("/api/v1/tours", (req, res) => {
 //express.json() is the middleware to parse the comming-in req.body to JavaScript Object
 app.use(express.json());
 ```
-- Create a POST req:
+- Create a POST request:
 ```JavaScript
 
 app.post("/api/v1/tours", (req, res) => {
