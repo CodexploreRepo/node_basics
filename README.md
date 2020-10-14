@@ -358,13 +358,21 @@ app.use((req, res, next) => {
 
 ```JavaScript
 //Good Practice to Specify on API version on URL: /api/v1/
-app.get("/api/v1/tours", (req, res) => {
-  res.status(200).json({
+app.get("/api/v1/tours/:id", (req, res) => {
+  // console.log(req.params);
+  const id = req.params.id * 1; //convert req.params.id from String to Number
+  const tour = tours.find((el) => el.id === id);
+  if (!tour) {
+    return res.status(404).json({
+      status: "fail",
+      message: "Invalid ID",
+    });
+  }
+
+  return res.status(200).json({
     status: "success",
-    //Give the users more understanding of API response
-    results: tours.length,
     data: {
-      tours, //equivalent to tours: tours,
+      tour,
     },
   });
 });
