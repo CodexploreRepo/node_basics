@@ -339,7 +339,7 @@ app.use((req, res, next) => {
 | `req.query`   |                https://localhost:3000/ `?name=CodeXPlore&age=25`                | `{name: 'CodeXPlore', age: '25' }` |
 | `req.body`    | **form-data**, **urlendcoded**, **raw-json**<br/>Please refer Postman/Body part |                                    |
 | `req.headers` |           `Content-Type : application/json` <br> `name : CodeXplore`            |                                    |
-| `req.params`  |                                `app.get("/:id")`                                |                                    |
+| `req.params`  |    `app.get("/:id")`<br> `app.get("/:id/:optional?")`                           | ? = optional parameter             |
 
 ## Response
 
