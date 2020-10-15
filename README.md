@@ -343,6 +343,15 @@ app.use((req, res, next) => {
 
 ## Response
 
+| Status Code   |                                     Definition                               | 
+| ------------- | :----------------------------------------------------------------------------|
+| 200 | OK or Updated OK |
+| 201 | OK - Created|
+| 204 | OK - Deleted| 
+|||
+|404| Not found|
+
+
 - Res Header:
 
 ```Javascript
@@ -353,6 +362,9 @@ app.use((req, res, next) => {
 
 - JSON : `res.json(user.entries)`
 - Status: `res.status(200).send("Sending Res");`
+
+
+
 
 ## Get Request
 
