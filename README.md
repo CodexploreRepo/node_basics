@@ -20,7 +20,7 @@
   - [Response](#response)
   - [API - Get Request](#get-request)
   - [API - Post Request](#post-request)
-  - [Refactoring API](#refactoring-api)
+  - [Refactoring APIs](#refactoring-api)
 - [Cross-Origin Resource Sharing - CORS](#cors)
   - [What is CORS ?](#what-is-cors)
   - [CORS Request Types](#cors-request-types)
@@ -311,6 +311,7 @@ const server = http.createServer((request, response) => {
 [(Back to top)](#table-of-contents)
 
 # Express Middleware
+![Screenshot 2020-10-15 at 11 39 29 PM](https://user-images.githubusercontent.com/64508435/96152946-af19ec00-0f3f-11eb-9788-90f8273760d2.png)
 
 ```JavaScript
 //Express Middleware: do smtg with request to make it easier to work with
