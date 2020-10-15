@@ -20,6 +20,7 @@
   - [Response](#response)
   - [API - Get Request](#get-request)
   - [API - Post Request](#post-request)
+  - [Refactoring API](#refactoring-api)
 - [Cross-Origin Resource Sharing - CORS](#cors)
   - [What is CORS ?](#what-is-cors)
   - [CORS Request Types](#cors-request-types)
@@ -415,6 +416,21 @@ app.post("/api/v1/tours", (req, res) => {
     });
   });
 });
+```
+
+## Refactoring API
+```JavaScript
+app
+  .route("/api/v1/tours")
+  .get(getAllTours)
+  .post(createTour);
+
+app
+  .route("/api/v1/tours/:id")
+  .get(getTour)
+  .patch(updateTour)
+  .delete(deleteTour);
+
 ```
 
 [(Back to top)](#table-of-contents)
