@@ -370,7 +370,7 @@ module.exports = router;
 ## Controllers Folder
 - In this routes folder, we will define controllers for each Router (For ex: `tourController.js, userController.js`)
 
-```JavaScripts
+```JavaScript
 //Tour Controller Example in tourController.js
 const fs = require("fs");
 
