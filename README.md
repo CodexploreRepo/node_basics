@@ -434,6 +434,11 @@ app.use((req, res, next) => {
   next();
 });
 ```
+## Chaining Multiple Middlware Function
+- For example, we want to chain Middlware `checkBody` middlware before `createTour` controller to handle the incomming req.body
+```JavaScript
+router.route("/").post(checkBody, createTour);
+```
 
 # RESTful API
 
