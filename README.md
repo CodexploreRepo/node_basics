@@ -19,6 +19,7 @@
   - [Controllers Folder](#controllers-folder)
 - [Express Middleware](#express-middleware)
   - [Middleware Params](#middleware-params)
+  - [Chaining Multiple Middlware Function](#chaining-multiple-middlware-function)
 - [RESTful API](#restful-api)
   - [Request](#request)
   - [Response](#response)
@@ -468,6 +469,7 @@ router.route("/").post(checkBody, createTour);
 | 201 | OK - Created|
 | 204 | OK - Deleted| 
 |||
+|400| Bad Request|
 |404| Not found|
 
 
