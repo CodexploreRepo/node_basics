@@ -14,6 +14,9 @@
   - [Loading Static Files](#loading-static-files)
 - [Project Structure](#project-structure)
   - [Server.js](#server)
+  - [App.js](#app)
+  - [Routes Folder](#routes-folder)
+  - [Controllers Folder](#controllers-folder)
 - [Routing](#routing)
   - [URL Module](#url-module)
 - [Express Middleware](#express-middleware)
@@ -349,7 +352,51 @@ app.use("/api/v1/users", userRouter);
 //Export the app so that Server.js can access
 module.exports = app;
 ```
+## Routes Folder
+- In this routes folder, we will define routers (For ex: `tourRouter.js, userRouter.js`)
+- For each Router file, we will have differnet APIs -> call corresponding controllers to handle the API requests (like `GET, POST, PATCH, DELETE`)
+```JavaScript
+//User Router Example in userRouter.js
+const express = require("express");
+const router = express.Router();
+const {
+  getAllUsers,
+  createUser,
+  getUser,
+  updateUser,
+  deleteUser,
+} = require("./../controllers/userController");
 
+router.route("/").get(getAllUsers).post(createUser);
+router.route("/:id").get(getUser).patch(updateUser).delete(deleteUser);
+
+module.exports = router;
+
+```
+## Controllers Folder
+- In this routes folder, we will define controllers for each Router (For ex: `tourController.js, userController.js`)
+
+```JavaScripts
+//Tour Controller Example in tourController.js
+const fs = require("fs");
+
+const toursFileName = `${__dirname}/../dev-data/data/tours-simple.json`;
+//JSON parse is to converted JSON file to JavaScript Object
+const tours = JSON.parse(fs.readFileSync(toursFileName));
+
+exports.getAllTours = (req, res) => {
+  res.status(200).json({
+    status: "success",
+    //Give the users more understanding of API response
+    requestedAt: req.requestTime,
+    results: tours.length,
+    data: {
+      tours, //equivalent to tours: tours,
+    },
+  });
+};
+
+```
 
 # Routing
 
