@@ -12,6 +12,8 @@
 - [Introduction to Express JS](#introduction-to-express-js)
   - [Building a Server via Express](#building-a-server-via-express)
   - [Loading Static Files](#loading-static-files)
+- [Project Structure](#project-structure)
+  - [Server.js](#server)
 - [Routing](#routing)
   - [URL Module](#url-module)
 - [Express Middleware](#express-middleware)
@@ -294,6 +296,60 @@ app.listen(3000);
   - Step 2: In `server.js`, add this: `app.use(express.static(__dirname + "/public"));`
 
 [(Back to top)](#table-of-contents)
+
+# Project Structure
+<img width="750" alt="Screenshot 2020-10-18 at 11 37 21 AM" src="https://user-images.githubusercontent.com/64508435/96358162-96275b80-1136-11eb-9f96-422427410e77.png">
+
+## Server 
+-  Creating a `server.js` file: This is the starting point of an Express App
+```JavaScript
+//STARTING POINT
+const app = require("./app"); //Import App from app.js module
+
+//#4 - START SERVER
+const port = 3000;
+app.listen(port, () => {
+  console.log(`App is running @ port ${port}...`);
+});
+
+```
+## App
+- In `app.js` file, the application is defined with
+  - Middlware: which will be used by all the routes like express.json() parser 
+  - Routers (For ex: tourRouter, userRouter): which basically APIs 
+```JavaScript
+const express = require("express");
+const morgan = require("morgan");
+
+const tourRouter = require("./routes/tourRoutes");
+const userRouter = require("./routes/userRoutes");
+
+app = express();
+
+//#1 - Middleware: added by using app.use()
+app.use(morgan("dev")); //To log req/res info
+app.use(express.json()); //express.json() is the middleware to parse the comming-in req.body to JavaScript Object
+
+app.use((req, res, next) => {
+  console.log("Hello From Middleware");
+  next();
+});
+
+app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString();
+  next();
+});
+
+//#3 - ROUTES:
+
+//Mouting the router
+app.use("/api/v1/tours", tourRouter);
+app.use("/api/v1/users", userRouter);
+
+//Export the app so that Server.js can access
+module.exports = app;
+```
+
 
 # Routing
 
