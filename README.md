@@ -380,7 +380,8 @@ router.param("id", checkId);
 router.route("/").get(getAllUsers).post(createUser);
 router.route("/:id").get(getUser).patch(updateUser).delete(deleteUser);
 ```
-- In `tourController.js` we have:
+- In `tourController.js`, we can write the middleware that can access `middleware params`:
+  - `val` is equivalent to the value of req.params.
 ```JavaScript
 exports.checkId = (req, res, next, val) => {
   if (req.params.id * 1 > tours.length) {
