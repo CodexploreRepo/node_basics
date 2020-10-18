@@ -16,9 +16,8 @@
   - [Server.js](#server)
   - [App.js](#app)
   - [Routes Folder](#routes-folder)
+    - [Middleware Params](#middleware-params)
   - [Controllers Folder](#controllers-folder)
-- [Routing](#routing)
-  - [URL Module](#url-module)
 - [Express Middleware](#express-middleware)
 - [RESTful API](#restful-api)
   - [Request](#request)
@@ -365,8 +364,35 @@ router.route("/").get(getAllUsers).post(createUser);
 router.route("/:id").get(getUser).patch(updateUser).delete(deleteUser);
 
 module.exports = router;
-
 ```
+### Middleware Params
+- Using the `router.param` to pass req.params to the middleware
+- In `tourRouter.js` we have:
+```JavaScript
+const {
+  checkId,
+  ...
+} = require("./../controllers/tourController");
+
+//Middleware Params: to validate the "id" is valid or not
+router.param("id", checkId);
+
+router.route("/").get(getAllUsers).post(createUser);
+router.route("/:id").get(getUser).patch(updateUser).delete(deleteUser);
+```
+- In `tourController.js` we have:
+```JavaScript
+exports.checkId = (req, res, next, val) => {
+  if (req.params.id * 1 > tours.length) {
+    return res.status(404).json({
+      status: "fail",
+      message: "Invalid ID",
+    });
+  }
+  next();
+};
+```
+
 ## Controllers Folder
 - In this routes folder, we will define controllers for each Router (For ex: `tourController.js, userController.js`)
 
@@ -392,19 +418,6 @@ exports.getAllTours = (req, res) => {
 
 ```
 
-# Routing
-
-## URL module
-
-- To parse URL on Broswer
-
-```JavaScript
-const url = require('url');
-const server = http.createServer((request, response) => {
-    //Request
-    console.log("url", request.url);
-
-```
 
 [(Back to top)](#table-of-contents)
 
