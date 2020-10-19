@@ -184,14 +184,33 @@ app.listen(PORT, () => {
 });
 ```
 
-To inject the new Environmental Variables, like in this case is `PORT`, we need to open Bash Shell: Terminal > type "bash"
+- To inject the new Environmental Variables, like in this case is `PORT`, we need to open Bash Shell: Terminal > type "bash"
 
 ```
 bash-3.2$ PORT=3050 node server.js
 app is running on port 3050
 
 ```
-To create 
+- To create `config.env` to store all the Environmental Variables we want to inject to the Node.js app inside the `server` folder
+  - `config.env` file
+  ```
+  NODE_ENV=development
+  PORT=3000
+  USERNAME=quannguyen
+  PASSWORD=123456
+  ```
+  - To load all the Environmental Variables inside the  `config.env` file into the Node JS app, we need to use `dotenv` module & load inside the `server.js` file
+  ```JavaScript
+  //STARTING POINT
+  const dotenv = require("dotenv");
+  //dotenv module: to read variables from the config.env file &
+  //save in Node.JS environment variables
+  dotenv.config({ path: "./config.env" });
+  // console.log(process.env);
+
+  //Need to load ./config.env before the app.js so that any file can access all the Environmental Variables inside the  `config.env` via process.env 
+  const app = require("./app");
+  ```
 
 [(Back to top)](#table-of-contents)
 
