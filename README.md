@@ -53,6 +53,7 @@
   | nodemon| npm install nodemon | to auto reload the server when we make some changes in our code <br> `"script" : {"start": "nodemon index.js"}` so when we run npm start ~ npm nodemon index.js|
   |morgan|require('morgan')|to log the API Request: `app.use(morgan("dev"));` <br>`GET /api/v1/tours 200 4.245 ms - 8618` |
   | body-parser | included in Express |Body-Parser middleware to parse the body of the request<br/>Otherwise, console.log(req.body) will return `undefined`<br/>How to use:<br> `app.use(express.urlencoded({ extended: false })); //to parse urlencoded`<br> `app.use(express.json()); //to parse json`|
+  |dotenv| npm install dotenv | dotenv module: to read variables from the config.env file & save in Node.JS environment variables<br>`dotenv.config({ path: "./config.env" });`|
   |[bcrypt-nodejs](https://github.com/kelektiv/node.bcrypt.js)|npm install bcrypt-nodejs|allow us to create secure login via encrypt (hash) the password to hash<br>bcrypt is 15 years old and has been vetted by the crypto community.|
   |cors|npm install cors|An example of a cross-origin request: the front-end JavaScript code served from `https://domain-a.com` uses `XMLHttpRequest` to make a request for `https://domain-b.com/data.json`<br>How to add into Node JS Back-`const cors = require("cors");`<br>`app.use(cors());`|
   ||||
@@ -190,6 +191,7 @@ bash-3.2$ PORT=3050 node server.js
 app is running on port 3050
 
 ```
+To create 
 
 [(Back to top)](#table-of-contents)
 
