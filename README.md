@@ -670,6 +670,20 @@ app.use(
 
 # Database Connection
 ## Mongo DB
+- Step 1: Create a new project in Atlas > create a new Cluster
+- Step 2: Click on Connect > Add IP Address to the White List > Create a New Username > 
+Add the Username's password in the `config.env` file in the app
+```
+DATABASE_PASSWORD=GLQd35jv8ZvBpohF
+```
+<img width="500" alt="Screenshot 2020-11-01 at 9 53 55 PM" src="https://user-images.githubusercontent.com/64508435/97804781-f537b500-1c8c-11eb-9111-03edadb9cb15.png">
+
+- Step 3: Select "Choose a connection Method" > "Connect with MongoDB Compass" > "I have Commpass" > "Copy the connection string, then open MongoDB Compass."
+- Step 4: Open the MongoDB Compass app > Click connect & Enter the connection String with Password replaced.
+```
+mongodb+srv://quannguyen:<password>@cluster0.bl9br.mongodb.net/test
+```
+
 
 
 # Production Deployment
