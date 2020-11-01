@@ -702,6 +702,11 @@ mongodb+srv://quannguyen:<password>@cluster0.bl9br.mongodb.net/test
 
 ## Mongo DB CLI
 
+  | Step |       Command        | Description                                                      |
+  | ---- | :------------------: | ---------------------------------------------------------------- |
+  | 1    |   `show dbs`         | to show all available databases                                  |
+  | 2    |   `use db_name`      | to use/switch to the database db_name                            |
+  | 3    |   `db.tours.find()`  | to list down all elements in `tours` collection                  |
 
 # Production Deployment
 
