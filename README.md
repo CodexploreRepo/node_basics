@@ -34,7 +34,7 @@
 - [Postman](#postman)
 - [Database Connection](#database-connection)
   - [Mongo DB](#mongo-db)
-    - [Mongo DB Connection via Express App](#mongo-db-connection-via-mongo-express-app)
+    - [Mongo DB Connection via Express App](#mongo-db-connection-via-express-app)
     - [Mongo DB Connection via Mongo DB Compass app](#mongo-db-connection-via-mongo-db-compass-app)
     - [Mongo DB Connection via Mongo DB Shell](#mongo-db-connection-via-mongo-db-shell-app)
     - [Whitelist IPs to access DB](#whitelist-ips-to-access-db)
@@ -684,7 +684,25 @@ DATABASE_PASSWORD=GLQd35jv8ZvBpohF
 ```
 
 ### Mongo DB Connection via Express App
-- Step 3: Select "Choose a connection Method" > "Connect with your application"
+- Step 3: Select "Choose a connection Method" > "Connect with your application" 
+- Step 4: Install `mongoose` in Express app via "npm install mongoose"
+  - Step 4.1: in `server.js`:
+  ```JavaScript
+  //Database Connection
+
+  const DB = process.env.DATABASE.replace(
+    "<PASSWORD>",
+    process.env.DATABASE_PASSWORD //replace Password in the DATABASE String
+  );
+  mongoose
+    .connect(DB, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
+      useUnifiedTopology: true,
+    })
+    .then(() => console.log("DB connected sucessfully"));
+  ```
 ### Mongo DB Connection via Mongo DB Compass app
 <img width="500" alt="Screenshot 2020-11-01 at 9 53 55 PM" src="https://user-images.githubusercontent.com/64508435/97804781-f537b500-1c8c-11eb-9111-03edadb9cb15.png">
 - Step 3: Select "Choose a connection Method" > "Connect with MongoDB Compass" > "I have Commpass" > "Copy the connection string, then open MongoDB Compass."
