@@ -32,6 +32,8 @@
   - [Identifying a CORS Response](#Identifying-a-cors-response)
   - [How to Add CORS to a Nodejs Express App](#how-to-add-cors-to-a-nodejs-express-app)
 - [Postman](#postman)
+- [Database Connection](#database-connection)
+  - [Postman](#postman)
 - [Production Deployment](#production-deployment)
   - [Back-End Heroku Deploy](#back-end-heroku-deploy)
   - [Database Heroku Connection](#database-heroku-connection)
