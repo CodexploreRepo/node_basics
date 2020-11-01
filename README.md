@@ -34,6 +34,7 @@
 - [Postman](#postman)
 - [Database Connection](#database-connection)
   - [Mongo DB](#mongo-db)
+    - [Mongo DB Connection via Express App](#mongo-db-connection-via-mongo-express-app)
     - [Mongo DB Connection via Mongo DB Compass app](#mongo-db-connection-via-mongo-db-compass-app)
     - [Mongo DB Connection via Mongo DB Shell](#mongo-db-connection-via-mongo-db-shell-app)
     - [Whitelist IPs to access DB](#whitelist-ips-to-access-db)
@@ -678,15 +679,18 @@ app.use(
 - Step 2: Click on Connect > Add IP Address to the White List > Create a New Username > 
 Add the Username's password in the `config.env` file in the app
 ```
+DATABASE=mongodb+srv://quannguyen:<PASSWORD>@cluster0.bl9br.mongodb.net/natours?retryWrites=true&w=majority
 DATABASE_PASSWORD=GLQd35jv8ZvBpohF
 ```
-<img width="500" alt="Screenshot 2020-11-01 at 9 53 55 PM" src="https://user-images.githubusercontent.com/64508435/97804781-f537b500-1c8c-11eb-9111-03edadb9cb15.png">
 
+### Mongo DB Connection via Express App
+- Step 3: Select "Choose a connection Method" > "Connect with your application"
 ### Mongo DB Connection via Mongo DB Compass app
+<img width="500" alt="Screenshot 2020-11-01 at 9 53 55 PM" src="https://user-images.githubusercontent.com/64508435/97804781-f537b500-1c8c-11eb-9111-03edadb9cb15.png">
 - Step 3: Select "Choose a connection Method" > "Connect with MongoDB Compass" > "I have Commpass" > "Copy the connection string, then open MongoDB Compass."
 - Step 4: Open the MongoDB Compass app > Click connect & Enter the connection String with Password replaced.
 ```
-mongodb+srv://quannguyen:<password>@cluster0.bl9br.mongodb.net/test
+mongodb+srv://quannguyen:<password>@cluster0.bl9br.mongodb.net/natours
 ```
 <img width="1006" alt="Screenshot 2020-11-01 at 10 22 34 PM" src="https://user-images.githubusercontent.com/64508435/97805441-1dc1ae00-1c91-11eb-8f9a-c7485baae551.png">
 
