@@ -34,6 +34,10 @@
 - [Postman](#postman)
 - [Database Connection](#database-connection)
   - [Mongo DB](#mongo-db)
+    - [Mongo DB Connection via Mongo DB Compass app](#mongo-db-connection-via-mongo-db-compass-app)
+    - [Mongo DB Connection via Mongo DB Shell](#mongo-db-connection-via-mongo-db-shell-app)
+    - [Whitelist IPs to access DB](#whitelist-ips-to-access-db)
+  - [Mongo DB CLI](#mongo-db-cli)
 - [Production Deployment](#production-deployment)
   - [Back-End Heroku Deploy](#back-end-heroku-deploy)
   - [Database Heroku Connection](#database-heroku-connection)
@@ -678,12 +682,25 @@ DATABASE_PASSWORD=GLQd35jv8ZvBpohF
 ```
 <img width="500" alt="Screenshot 2020-11-01 at 9 53 55 PM" src="https://user-images.githubusercontent.com/64508435/97804781-f537b500-1c8c-11eb-9111-03edadb9cb15.png">
 
+### Mongo DB Connection via Mongo DB Compass app
 - Step 3: Select "Choose a connection Method" > "Connect with MongoDB Compass" > "I have Commpass" > "Copy the connection string, then open MongoDB Compass."
 - Step 4: Open the MongoDB Compass app > Click connect & Enter the connection String with Password replaced.
 ```
 mongodb+srv://quannguyen:<password>@cluster0.bl9br.mongodb.net/test
 ```
+<img width="1006" alt="Screenshot 2020-11-01 at 10 22 34 PM" src="https://user-images.githubusercontent.com/64508435/97805441-1dc1ae00-1c91-11eb-8f9a-c7485baae551.png">
 
+### Mongo DB Connection via Mongo DB Shell
+- Step 3: Install Mongo Shell (Not required if already installed)
+- Step 4: your connection string in your command line
+
+### Whitelist IPs to access DB
+
+- Step 5 [Optional]: Allow access to all IPs (WhiteList) to access the database
+  - Cluster > Network Access > Add IP Address > Allows All
+<img width="1409" alt="Screenshot 2020-11-01 at 10 29 38 PM" src="https://user-images.githubusercontent.com/64508435/97805557-d1c33900-1c91-11eb-928f-efa091553701.png">
+
+## Mongo DB CLI
 
 
 # Production Deployment
