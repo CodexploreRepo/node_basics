@@ -39,6 +39,7 @@
     - [Mongo DB Connection via Mongo DB Shell](#mongo-db-connection-via-mongo-db-shell-app)
     - [Whitelist IPs to access DB](#whitelist-ips-to-access-db)
   - [Mongo DB CLI](#mongo-db-cli)
+  - [What is Mongoose](#what-is-mongoose)
 - [Production Deployment](#production-deployment)
   - [Back-End Heroku Deploy](#back-end-heroku-deploy)
   - [Database Heroku Connection](#database-heroku-connection)
@@ -729,6 +730,12 @@ mongodb+srv://quannguyen:<password>@cluster0.bl9br.mongodb.net/natours
   | 1    |   `show dbs`         | to show all available databases                                  |
   | 2    |   `use db_name`      | to use/switch to the database db_name                            |
   | 3    |   `db.tours.find()`  | to list down all elements in `tours` collection                  |
+
+## What is Mongoose 
+
+![Screenshot 2020-11-18 at 10 23 46 AM](https://user-images.githubusercontent.com/64508435/99474844-526b8000-2988-11eb-8f48-e135432ae968.png)
+
+
 
 # Production Deployment
 
