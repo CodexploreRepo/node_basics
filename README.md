@@ -40,7 +40,10 @@
     - [Mongo DB Connection via Mongo DB Shell](#mongo-db-connection-via-mongo-db-shell-app)
     - [Whitelist IPs to access DB](#whitelist-ips-to-access-db)
   - [Mongo DB CLI](#mongo-db-cli)
-  - [What is Mongoose](#what-is-mongoose)
+- [Mongoose](#mongoose)
+  -[What is Mongoose](#mongoose)
+  -[DB Schema with Mongoose](#db-schema)
+  -[DB Create, Read, Update, Deleted Document](#db-create-read-update-deleted-document)
 - [Production Deployment](#production-deployment)
   - [Back-End Heroku Deploy](#back-end-heroku-deploy)
   - [Database Heroku Connection](#database-heroku-connection)
@@ -742,11 +745,96 @@ mongodb+srv://quannguyen:<password>@cluster0.bl9br.mongodb.net/natours
   | 2    |   `use db_name`      | to use/switch to the database db_name                            |
   | 3    |   `db.tours.find()`  | to list down all elements in `tours` collection                  |
 
+# Mongoose
 ## What is Mongoose 
 
 ![Screenshot 2020-11-18 at 10 23 46 AM](https://user-images.githubusercontent.com/64508435/99474844-526b8000-2988-11eb-8f48-e135432ae968.png)
 
+## DB Schema
+```JavaScript
+const mongoose = require("mongoose");
 
+const tourSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, "A tour must have a name"], //[true, error_msg],
+    unique: true, //Key
+  },
+  duration: {
+    type: Number,
+    required: [true, "A tour must have a duration"],
+  },
+  priceDiscount: Number,
+  summary: {
+    type: String,
+    trim: true, //trim Only work for String, to remove all the whitespaces @ begin & end
+  },
+
+  startDates: [Date], //Array of Dates
+});
+
+//Create a model using mongoose.model() function
+const Tour = mongoose.model("Tour", tourSchema);
+
+module.exports = Tour;
+```
+## DB Create, Read, Update, Deleted Document
+
+##
+```
+const Tour = require("./../models/tourModel");
+
+exports.createTour = async (req, res) => {
+  try {
+    //await the result from the Promise, instead of .then(), .catch()
+    // await ....
+
+    res.status(201).json({
+      status: "success",
+      data: {
+        //Return the data updated
+      },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      message: err,
+    });
+  }
+};
+
+```
+### DB Create
+```
+//Only key-value pairs in req.body which matchs with DB Schema are saved into DB
+ const newTour = await Tour.create(req.body);
+```
+
+### DB Get
+#### Get All
+```
+//.find() will query all documents if not passing any param
+const tours = await Tour.find();
+```
+#### Get By ID
+```
+   const tour = await Tour.findById(req.params.id);
+    //Tour.findOne({ _id: req.params.id })
+```
+
+### DB Update
+```
+   const tour = await Tour.findByIdAndUpdate(req.params.id, req.body, {
+      new: true, //newly updated doc will be returned, so can send to client
+      runValidators: true, //validate with Model's schema
+    });
+
+```
+
+### DB Delete
+```
+ await Tour.findByIdAndDelete(req.params.id);
+```
 
 # Production Deployment
 
