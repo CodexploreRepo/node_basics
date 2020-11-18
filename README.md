@@ -780,8 +780,8 @@ module.exports = Tour;
 ```
 ## DB Create, Read, Update, Deleted Document
 
-##
-```
+## General Templete to Create a Controller to interact with DB
+```JavaScript
 const Tour = require("./../models/tourModel");
 
 exports.createTour = async (req, res) => {
@@ -805,25 +805,25 @@ exports.createTour = async (req, res) => {
 
 ```
 ### DB Create
-```
+```JavaScript
 //Only key-value pairs in req.body which matchs with DB Schema are saved into DB
  const newTour = await Tour.create(req.body);
 ```
 
 ### DB Get
 #### Get All
-```
+```JavaScript
 //.find() will query all documents if not passing any param
 const tours = await Tour.find();
 ```
 #### Get By ID
-```
+```JavaScript
    const tour = await Tour.findById(req.params.id);
     //Tour.findOne({ _id: req.params.id })
 ```
 
 ### DB Update
-```
+```JavaScript
    const tour = await Tour.findByIdAndUpdate(req.params.id, req.body, {
       new: true, //newly updated doc will be returned, so can send to client
       runValidators: true, //validate with Model's schema
@@ -832,7 +832,7 @@ const tours = await Tour.find();
 ```
 
 ### DB Delete
-```
+```JavaScript
  await Tour.findByIdAndDelete(req.params.id);
 ```
 
