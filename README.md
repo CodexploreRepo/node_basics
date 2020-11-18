@@ -12,6 +12,7 @@
 - [Introduction to Express JS](#introduction-to-express-js)
   - [Building a Server via Express](#building-a-server-via-express)
   - [Loading Static Files](#loading-static-files)
+  - [Back-End Architecture: MVC - Model View Controller](#Back-End-Architecture-MVC)
 - [Project Structure](#project-structure)
   - [Server.js](#server)
   - [App.js](#app)
@@ -326,6 +327,16 @@ app.listen(3000);
 - Static Files: **index.htmls, css**
   - Step 1: Create a `public` folder in same directory with `server.js`
   - Step 2: In `server.js`, add this: `app.use(express.static(__dirname + "/public"));`
+
+[(Back to top)](#table-of-contents)
+
+## Back End Architecture MVC
+- **Model** [Business Logic]:
+- **Controller** [Application Logic]:handle Application Requests, interact with Model & User
+- **View** [Presentation Logic]: Graphical interface 
+![Screenshot 2020-11-18 at 11 10 55 AM](https://user-images.githubusercontent.com/64508435/99478112-c90b7c00-298e-11eb-8fdc-e5e5a046c566.png)
+![Screenshot 2020-11-18 at 11 14 56 AM](https://user-images.githubusercontent.com/64508435/99478428-564ed080-298f-11eb-8727-cdd068fb7e32.png)
+
 
 [(Back to top)](#table-of-contents)
 
